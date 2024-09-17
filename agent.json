@@ -1,0 +1,14 @@
+{
+  "defaultLanguageCode": "en",
+  "timeZone": "America/Los_Angeles",
+  "enableLogging": true,
+  "projectNumber": 510916338777,
+  "enableStackdriverLogging": true,
+  "advancedSettings": {
+    "loggingSettings": {
+      "enableStackdriverLogging": true,
+      "enableInteractionLogging": true
+    }
+  },
+  "startPlaybook": "Default Generative Agent"
+}
