@@ -1,5 +1,5 @@
 # Looker Agent 
-## Created wtih Vertex AI Agent Builder, using Data Stores, OpenAPI, and powered by Gemini 1.5 Flash
+## Created wtih Vertex AI Agent Builder, using Data Stores, OpenAPI, and powered by Gemini
 This repository contains the configuration and instructions for setting up the Looker Agent in Vertex AI. This agent assists users with the Looker ecosystem, LookML, Looker dashboard issues, and SQL queries related to BigQuery.
 
 **Table of Contents**
