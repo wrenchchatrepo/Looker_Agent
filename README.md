@@ -1,11 +1,10 @@
-# Looker Agent 
-**Created wtih Vertex AI Agent Builder,using Data Stores, OpenAPI, powered by Gemini 1.5 Flash**
----
+# Looker Agent
+## **Created wtih Vertex AI Agent Builder,using Data Stores, OpenAPI, powered by Gemini 1.5 Flash**
 This repository contains the configuration and instructions for setting up the Looker Agent in Vertex AI. This agent assists users with the Looker ecosystem, LookML, and SQL related to BigQuery.
 > **Table of Contents**
 > 1. **Repository Setup**
 > 2. **Required Roles, Permissions, and APIs**
-> + Get a Gemini API key 
+> + Get a Gemini API key
 > + Roles and Permissions
 > + APIs to Enable
 > + Instructions
@@ -20,13 +19,16 @@ This repository contains the configuration and instructions for setting up the L
 ---
 ## Repository Setup
 To clone this repository and set it up locally, run:
-`git clone git@github.com:doit/Looker_Agent.git`
-> Ensure you have access to this repo. If not, request access from the repo owner.
+```
+git clone git@github.com:doit/Looker_Agent.git
+```
+Ensure you have access to this repo. If not, request access from the repo owner.
 ## Required Roles, Permissions, and APIs
-Use or create a billing-enabled project in Google Cloud Platform, add the following roles to you servicve account, and enable the following APIs. 
-### Get a Gemini API key 
+Use or create a billing-enabled project in Google Cloud Platform, add the following roles to you servicve account, and enable the following APIs.
+### Get a Gemini API key
 To use the Gemini API, you need an API key. You can create a key with a few clicks in Google AI Studio.
-> [![Get a Gemini API Key](https://img.shields.io/badge/Get%20Gemini%20API%20Key-blue?style=for-the-badge)](https://makersuite.google.com/app/apikey)### Roles and Permissions
+> [![Get a Gemini API Key](https://img.shields.io/badge/Get%20Gemini%20API%20Key-blue?style=for-the-badge)](https://makersuite.google.com/app/apikey)
+### Roles and Permissions
 1. Roles Required:
 - BigQuery Admin: Manages all BigQuery resources.
 - Logging Admin: Manages Cloud Logging.
@@ -62,7 +64,6 @@ To use the Gemini API, you need an API key. You can create a key with a few clic
 - Go to the Google Cloud Console API Library.
 - Search for and enable each required API by clicking Enable.
 2. Enabling APIs via gcloud command-line:
-```
 gcloud services enable aiplatform.googleapis.com
 gcloud services enable analyticshub.googleapis.com
 gcloud services enable bigquery.googleapis.com
@@ -81,7 +82,6 @@ gcloud services enable discoveryengine.googleapis.com
 gcloud services enable enterprisesearch.googleapis.com
 gcloud services enable logging.googleapis.com
 gcloud services enable monitoring.googleapis.com
-```
 3. Assigning Roles via Google Cloud Console:
 - Go to the IAM & Admin page.
 - Select the user or service account, then click Edit Principal.
@@ -123,7 +123,7 @@ gcloud projects add-iam-policy-binding YOUR_PROJECT_ID \
    - Navigate to your Vertex AI Console > Agents.
    - Click Create New Agent or select an existing agent.
    - Under Settings, select GitHub as the repository source and link it to this repo:
-     (git@github.com:doit/Looker_Agent.git).
+      (git@github.com:doit/Looker_Agent.git).
 3. Configure the Agent:
 - Once the repo is linked, configure the agent’s behavior:
    - Set up intents, tools, and handoffs using the pre-defined instructions in the codebase.
@@ -153,6 +153,7 @@ This agent utilizes the following tools and handoffs:
 - Looker Assistant:
    - The Looker Assistant is designed to handle queries related to LookML and dashboards.
    - It uses the Looker Data Store to process requests and validate LookML models.
+
 - BigQuery Assistant:
    - The BigQuery Assistant assists with SQL performance and troubleshooting.
    - It uses the BigQuery Data Store to handle optimization tasks.
@@ -184,8 +185,8 @@ We welcome contributions to improve the Looker Agent. To contribute:
 - Cross-Agent Collaboration: Ensure seamless handoffs between the Vertex AI agent and Ava for deeper issue resolution.
 4. Improve User Experience for **DoiT CREs**
 - Automated Diagnostics: Enable the AI agents to pre-emptively diagnose issues based on Zendesk ticket history and suggest common fixes.
-- Custom Recommendations: Train the AI on DoiT’s best practices for Looker, Looker Studio, and BigQuery to provide personalized troubleshooting suggestions. 
+- Custom Recommendations: Train the AI on DoiT’s best practices for Looker, Looker Studio, and BigQuery to provide personalized troubleshooting suggestions.
 ---
 ### Contact Information
 ![dionatdoit](https://github.com/user-attachments/assets/1f1db637-35c5-4f7c-bb95-8386c8d1e70e)
-> For issues, reach out to the repo owner at dion@doit.com 
+> For issues, reach out to the repo owner at dion@doit.com
