@@ -1,25 +1,119 @@
 # Looker Agent 
-## Created wtih Vertex AI Agent Builder, using Data Stores, OpenAPI, and powered by Gemini
-This repository contains the configuration and instructions for setting up the Looker Agent in Vertex AI. This agent assists users with the Looker ecosystem, LookML, Looker dashboard issues, and SQL queries related to BigQuery.
-
-**Table of Contents**
-1. Repository Setup
-2. Vertex AI Agent Configuration
-3. Syncing the Agent with this Repository
-4. Agent Handoff Instructions
-5. Using the Looker and BigQuery Assistants
-6. Contributing
+**Created wtih Vertex AI Agent Builder,using Data Stores, OpenAPI, powered by Gemini 1.5 Flash**
+---
+This repository contains the configuration and instructions for setting up the Looker Agent in Vertex AI. This agent assists users with the Looker ecosystem, LookML, Looker dashboards, and SQL related to BigQuery.
+> **Table of Contents**
+> 1. **Repository Setup**
+> 2. **Required Roles, Permissions, and APIs**
+> + Get a Gemini API key 
+> + Roles and Permissions
+> + APIs to Enable
+> + Instructions
+> 3. **Vertex AI Agent Configuration**
+> + Syncing the Agent with this Repository
+> + Agent Handoff Instructions
+> + Using the Looker and BigQuery Assistants
+> 4. **Contributing**
+> + Required Files Checklist
+> + Roadmap
+> + Contact Information
 ---
 ## Repository Setup
-- To clone this repository and set it up locally, run:
-```
-git clone git@github.com:doit/Looker_Agent.git
-```
-Ensure you have access to this repo. If not, request access from the repo owner.
-## Get a Gemini API key 
+To clone this repository and set it up locally, run:
+`git clone git@github.com:doit/Looker_Agent.git`
+> Ensure you have access to this repo. If not, request access from the repo owner.
+## Required Roles, Permissions, and APIs
+Use or create a billing-enabled project in Google Cloud Platform, add the following roles to you servicve account, and enable the following APIs. 
+### Get a Gemini API key 
 To use the Gemini API, you need an API key. You can create a key with a few clicks in Google AI Studio.
-> [![Get a Gemini API Key](https://img.shields.io/badge/Get%20Gemini%20API%20Key-blue?style=for-the-badge)](https://makersuite.google.com/app/apikey)
-### Vertex AI Agent Configuration
+> [![Get a Gemini API Key](https://img.shields.io/badge/Get%20Gemini%20API%20Key-blue?style=for-the-badge)](https://makersuite.google.com/app/apikey)### Roles and Permissions
+1. Roles Required:
+- BigQuery Admin: Manages all BigQuery resources.
+- Logging Admin: Manages Cloud Logging.
+- Dialogflow Admin: Full access to Dialogflow agents and configurations.
+- Dataform Admin: Manages Dataform repositories and workflows.
+- Dataplex Admin: Manages Dataplex data lakes.
+- Monitoring Viewer: Read-only access to monitoring resources.
+- Project Viewer / Browser: Basic view permissions.
+2. Special Permission:
+- analysisResult.accessControlLists.accesses.permission
+- This may require a custom role if not included in predefined roles.
+### APIs to Enable
+- Analytics Hub API: analyticshub.googleapis.com
+- BigQuery API: bigquery.googleapis.com
+- BigQuery Connection API: bigqueryconnection.googleapis.com  ￼
+- BigQuery Data Policy API: bigquerydatapolicy.googleapis.com
+- BigQuery Migration API: bigquerymigration.googleapis.com
+- BigQuery Reservation API: bigqueryreservation.googleapis.com
+- BigQuery Storage API: bigquerystorage.googleapis.com
+- Cloud Logging API: logging.googleapis.com
+- Cloud Monitoring API: monitoring.googleapis.com
+- Cloud Resource Manager API: cloudresourcemanager.googleapis.com
+- Dialogflow API: dialogflow.googleapis.com
+- Dataform API: dataform.googleapis.com
+- Dataplex API: dataplex.googleapis.com
+- Discovery Engine API: discoveryengine.googleapis.com
+- Enterprise Search API: enterprisesearch.googleapis.com
+- Contact Center AI Platform API: contactcenterai.googleapis.com
+- Contact Center AI Insights API: contactcenteraiinsights.googleapis.com
+- Vertex AI API: aiplatform.googleapis.com  ￼
+### Instructions
+1. Enabling APIs via Google Cloud Console:
+- Go to the Google Cloud Console API Library.
+- Search for and enable each required API by clicking Enable.
+2. Enabling APIs via gcloud command-line:
+```
+gcloud services enable aiplatform.googleapis.com
+gcloud services enable analyticshub.googleapis.com
+gcloud services enable bigquery.googleapis.com
+gcloud services enable bigqueryconnection.googleapis.com
+gcloud services enable bigquerydatapolicy.googleapis.com
+gcloud services enable bigquerymigration.googleapis.com
+gcloud services enable bigqueryreservation.googleapis.com
+gcloud services enable bigquerystorage.googleapis.com
+gcloud services enable contactcenterai.googleapis.com
+gcloud services enable contactcenteraiinsights.googleapis.com
+gcloud services enable cloudresourcemanager.googleapis.com
+gcloud services enable dataform.googleapis.com
+gcloud services enable dataplex.googleapis.com
+gcloud services enable dialogflow.googleapis.com
+gcloud services enable discoveryengine.googleapis.com
+gcloud services enable enterprisesearch.googleapis.com
+gcloud services enable logging.googleapis.com
+gcloud services enable monitoring.googleapis.com
+```
+3. Assigning Roles via Google Cloud Console:
+- Go to the IAM & Admin page.
+- Select the user or service account, then click Edit Principal.
+- Add the required roles from the dropdown menu and click Save.
+4. Assigning Roles via gcloud:
+```
+# replace customRoleName with your desired custom role name
+# replace YOUR_PROJECT_ID with your Google Cloud project ID
+gcloud projects add-iam-policy-binding <PROJECT_ID> \
+  --member="user:<USER_EMAIL>" \
+  --role="roles/bigquery.admin"
+gcloud projects add-iam-policy-binding <PROJECT_ID> \
+  --member="user:<USER_EMAIL>" \
+  --role="roles/logging.admin"
+gcloud projects add-iam-policy-binding <PROJECT_ID> \
+  --member="user:<USER_EMAIL>" \
+  --role="roles/dialogflow.admin"
+# Repeat for other roles as needed.
+```
+5. Create a Custom Role with the Required Permission:
+```
+gcloud iam roles create customRoleName \
+  --project=YOUR_PROJECT_ID \
+  --title="Custom Role with Specific Permission" \
+  --permissions="analysisResult.accessControlLists.accesses.permission" \
+  --stage="GA"
+# add role to user or service account:
+gcloud projects add-iam-policy-binding YOUR_PROJECT_ID \
+  --member="user:USER_EMAIL" \
+  --role="projects/YOUR_PROJECT_ID/roles/customRoleName"
+```
+## Vertex AI Agent Configuration
 1. Export the Agent (optional):
 - If you need to export your existing Vertex AI agent, follow these steps:
    - Navigate to your Vertex AI Console > Agents.
@@ -55,40 +149,26 @@ This agent utilizes the following tools and handoffs:
 4. **Example Handoff:**
 - If a query involves LookML, the agent will detect the keyword and trigger a handoff to the Looker Assistant.
 - Example: "It sounds like you're asking about LookML. I’ll pass this to the Looker Assistant for help."
-## Using the Looker and BigQuery Assistants
+### Using the Looker and BigQuery Assistants
 - Looker Assistant:
    - The Looker Assistant is designed to handle queries related to LookML and dashboards.
    - It uses the Looker Data Store to process requests and validate LookML models.
 - BigQuery Assistant:
    - The BigQuery Assistant assists with SQL performance and troubleshooting.
    - It uses the BigQuery Data Store to handle optimization tasks.
-### Contributing
+## Contributing
 We welcome contributions to improve the Looker Agent. To contribute:
 1. Fork the repository.
 2. Create a new branch for your feature or bugfix.
 3. Submit a pull request with a detailed description of your changes.
-## The Looker_Agent repository contains the following key files:
-1.	README.md – Documentation for the project.
-2.	agent.json – Configuration file for the Vertex AI agent.
-3.	Flows:
-- /flows/Default Start Flow/Default Start Flow.json – Likely contains the initial flow for the agent’s interactions.
-4.	Generative Settings:
-- /generativeSettings/en.json – Language or generative model settings for English.
-5.	Intents:
-- /intents/Default Negative Intent/Default Negative Intent.json – Intent configuration for negative responses.
-- /intents/Default Welcome Intent/Default Welcome Intent.json – Welcome intent configuration.
-- /intents/Default Welcome Intent/trainingPhrases/en.json – Training phrases for the welcome intent in English.
-6.	Playbooks:
-- /playbooks/Default Generative Agent/Default Generative Agent.json – Configuration for the Default Generative Agent playbook.
-- /playbooks/LookML Syntax Assistant/LookML Syntax Assistant.json – Configuration for the LookML Syntax Assistant.
-### Required Files Checklist:
+### Required Files Checklist
 - Agent Configuration: agent.json ✅
 - Flows: Default Start Flow is present ✅
 - Intents: Default Negative and Welcome Intents are present with training phrases ✅
 - Playbooks: Both Default Generative Agent and LookML Syntax Assistant are present ✅
 - Generative Settings: The generative settings file is present ✅
 - README.md: Documentation is included ✅
-## Roadmap:
+### Roadmap
 1. Add Support for **Looker Studio Pro**
 - Expand Toolset: Introduce a new tool, ${TOOL: Looker_Studio_Pro_Data_Store}, for handling Looker Studio Pro queries.
 - Create Intents: Add Looker Studio Pro-specific intents, such as issues with report generation, dashboard syncing, and visualizations.
