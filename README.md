@@ -16,6 +16,9 @@ This repository contains the configuration and instructions for setting up the L
 git clone git@github.com:doit/Looker_Agent.git
 ```
 Ensure you have access to this repo. If not, request access from the repo owner.
+## Get a Gemini API key 
+To use the Gemini API, you need an API key. You can create a key with a few clicks in Google AI Studio.
+> [![Get a Gemini API Key](https://img.shields.io/badge/Get%20Gemini%20API%20Key-blue?style=for-the-badge)](https://makersuite.google.com/app/apikey)
 ### Vertex AI Agent Configuration
 1. Export the Agent (optional):
 - If you need to export your existing Vertex AI agent, follow these steps:
