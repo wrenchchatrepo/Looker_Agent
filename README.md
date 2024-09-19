@@ -26,7 +26,8 @@ To clone this repository and set it up locally, run:
 Use or create a billing-enabled project in Google Cloud Platform, add the following roles to you servicve account, and enable the following APIs. 
 ### Get a Gemini API key 
 To use the Gemini API, you need an API key. You can create a key with a few clicks in Google AI Studio.
-> [![Get a Gemini API Key](https://img.shields.io/badge/Get%20Gemini%20API%20Key-blue?style=for-the-badge)](https://makersuite.google.com/app/apikey)### Roles and Permissions
+> [![Get a Gemini API Key](https://img.shields.io/badge/Get%20Gemini%20API%20Key-blue?style=for-the-badge)](https://makersuite.google.com/app/apikey)
+### Roles and Permissions
 1. Roles Required:
 - BigQuery Admin: Manages all BigQuery resources.
 - Logging Admin: Manages Cloud Logging.
