@@ -41,6 +41,7 @@ To use the Gemini API, you need an API key. You can create a key with a few clic
 - analysisResult.accessControlLists.accesses.permission
 - This may require a custom role if not included in predefined roles.
 ### APIs to Enable
+
 - Analytics Hub API: analyticshub.googleapis.com
 - BigQuery API: bigquery.googleapis.com
 - BigQuery Connection API: bigqueryconnection.googleapis.com  ￼
@@ -60,10 +61,12 @@ To use the Gemini API, you need an API key. You can create a key with a few clic
 - Contact Center AI Insights API: contactcenteraiinsights.googleapis.com
 - Vertex AI API: aiplatform.googleapis.com  ￼
 ### Instructions
+
 1. Enabling APIs via Google Cloud Console:
 - Go to the Google Cloud Console API Library.
 - Search for and enable each required API by clicking Enable.
 2. Enabling APIs via gcloud command-line:
+```
 gcloud services enable aiplatform.googleapis.com
 gcloud services enable analyticshub.googleapis.com
 gcloud services enable bigquery.googleapis.com
@@ -82,11 +85,14 @@ gcloud services enable discoveryengine.googleapis.com
 gcloud services enable enterprisesearch.googleapis.com
 gcloud services enable logging.googleapis.com
 gcloud services enable monitoring.googleapis.com
+```
 3. Assigning Roles via Google Cloud Console:
+
 - Go to the IAM & Admin page.
 - Select the user or service account, then click Edit Principal.
 - Add the required roles from the dropdown menu and click Save.
 4. Assigning Roles via gcloud:
+
 ```
 # replace customRoleName with your desired custom role name
 # replace YOUR_PROJECT_ID with your Google Cloud project ID
@@ -102,6 +108,7 @@ gcloud projects add-iam-policy-binding <PROJECT_ID> \
 # Repeat for other roles as needed.
 ```
 5. Create a Custom Role with the Required Permission:
+
 ```
 gcloud iam roles create customRoleName \
   --project=YOUR_PROJECT_ID \
