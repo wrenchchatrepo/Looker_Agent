@@ -36,12 +36,12 @@
   },
   "languageCode": "en",
   "knowledgeConnectorSettings": {
+    "business": "DoiT",
     "mainLlmConfig": {
     
     }
   },
   "llmModelSettings": {
-    "model": "gemini-pro",
     "parameters": {
       "temperature": 0,
       "inputTokenLimit": "INPUT_TOKEN_LIMIT_UNSPECIFIED",
