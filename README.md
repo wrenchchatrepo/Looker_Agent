@@ -164,9 +164,10 @@ We welcome contributions to improve the Looker Agent. To contribute:
 ### Required Files Checklist
 - Agent Configuration: agent.json ✅
 - Flows: Default Start Flow is present ✅
+- Generative Settings: The generative settings file is present ✅
+- Guides: Blueprint for defining, testing agent and JSON for DialogFlow ✅
 - Intents: Default Negative and Welcome Intents are present with training phrases ✅
 - Playbooks: Both Default Generative Agent and LookML Syntax Assistant are present ✅
-- Generative Settings: The generative settings file is present ✅
 - README.md: Documentation is included ✅
 ### Roadmap
 1. Add Support for **Looker Studio Pro**
