@@ -15,7 +15,7 @@ info:
     This OpenAPI specification is used to interact with the Gemini 1.0 Pro API within the Looker and BigQuery ecosystem. It enables querying external services, processing data, and handling general-purpose tasks outside the scope of Looker or BigQuery-specific operations. The Gemini API integration allows for advanced AI-driven interactions, such as natural language processing, code generation, and data insights.
 
 servers:
-  - url: 'https://gemini.googleapis.com/v1'
+  - url: 'https://gemini.googleapis.com/v1/flash'
 paths:
   /generate:
     post:
