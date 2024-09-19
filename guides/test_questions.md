@@ -36,4 +36,3 @@
 3. How do you set up an automated failover mechanism for a microservices architecture deployed across multiple GCP regions?
 4. How can you integrate Looker with an external REST API to dynamically update user access based on external conditions?
 5. What are the key differences between row-level security in Looker and BigQuery, and how can you implement a unified security model across both platforms?
-6. 
