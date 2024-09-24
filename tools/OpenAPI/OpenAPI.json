@@ -1,7 +1,7 @@
 {
   "name": "91952ff5-73cd-464e-8db3-a44b86e6d51e",
   "displayName": "OpenAPI",
-  "description": "This OpenAPI specification is used to interact with the Gemini 1.0 Pro API within the Looker and BigQuery ecosystem. It enables querying external services, processing data, and handling general-purpose tasks outside the scope of Looker or BigQuery-specific operations. The Gemini API integration allows for advanced AI-driven interactions, such as natural language processing, code generation, and data insights.",
+  "description": "The OpenAPI tool allows for interaction with external APIs, enabling users to query and retrieve data from various external services. It is designed to handle API requests, process external data queries, and serve as a fallback for general-purpose tasks that don’t fall under the scope of Looker or BigQuery-specific operations. The OpenAPI integration ensures smooth external data interactions and is capable of making requests to other services as needed. This OpenAPI specification is used to interact with the Gemini 1.5 Flash within the Looker and BigQuery ecosystem. It enables querying external services, processing data, and handling general-purpose tasks outside the scope of Looker or BigQuery-specific operations. The Gemini API integration allows for advanced AI-driven interactions, such as natural language processing, code generation, and data insights.",
   "openApiSpec": {
     "ignoreUnknownFields": true
   },

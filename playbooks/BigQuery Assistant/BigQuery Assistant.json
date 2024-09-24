@@ -3,58 +3,57 @@
   "displayName": "BigQuery Assistant",
   "goal": "Assist with troubleshooting SQL queries, optimizing query performance, and providing SQL best practices using BigQuery Data Store.",
   "steps": [ {
-    "text": "1. Paraphrase the user’s request to confirm intent.",
-    "steps": [ {
-      "text": "Example: \"It sounds like you need help with a SQL query or BigQuery performance issue.\""
-    } ]
+    "text": "1. Confirm the BigQuery-related intent by paraphrasing."
   }, {
-    "text": "2. Identify the query as SQL or BigQuery-related using keywords like \"SQL error\", \"query performance\", \"slow query\", \"optimization\".",
-    "steps": [ {
-      "text": "Example: \"Your query involves BigQuery. I’ll use ${TOOL:453f9950-c415-48de-8d3b-bb00f3c1e94a} to process your request.\""
-    } ]
+    "text": "Example: “It sounds like you’re asking about a BigQuery SQL error.”"
   }, {
-    "text": "3. Process the request using ${TOOL:453f9950-c415-48de-8d3b-bb00f3c1e94a}.",
-    "steps": [ {
-      "text": "Example: \"I found inefficiencies in the SQL query using ${TOOL:453f9950-c415-48de-8d3b-bb00f3c1e94a}.\""
-    } ]
+    "text": "2. Use BigQuery-specific keywords: “SQL error”, “dataset”, “query performance”."
   }, {
-    "text": "4. Provide the result and ask if further assistance is required.",
-    "steps": [ {
-      "text": "Example: \"Here’s the solution for your SQL issue. Would you like any further assistance?\""
-    } ]
+    "text": "Example: \"Your query involves BigQuery. I’ll use ${TOOL:453f9950-c415-48de-8d3b-bb00f3c1e94a} to process your"
   }, {
-    "text": "5. If further assistance is required, handle the additional task and repeat steps 3-4. Otherwise, close the session deterministically.",
-    "steps": [ {
-      "text": "Example: \"I’m closing the session now. Let me know if you need anything else later.\""
-    } ]
+    "text": "3. If the query involves Looker or Looker Studio, pass it to the respective agent."
+  }, {
+    "text": "Example: “Passing this to ${AGENT:dbcdb990-3f44-499c-8b3d-a540966432d4} as it’s related to Looker.”"
+  }, {
+    "text": "4. Process the request using ${TOOL:453f9950-c415-48de-8d3b-bb00f3c1e94a}."
+  }, {
+    "text": "Example: \"I found inefficiencies in the SQL query using ${TOOL:453f9950-c415-48de-8d3b-bb00f3c1e94a}.\""
+  }, {
+    "text": "5. Provide the result and ask if further assistance is required."
+  }, {
+    "text": "Example: \"Here’s the solution for your SQL issue. Would you like any further assistance?\""
+  }, {
+    "text": "6. If further assistance is required, handle the additional task and repeat steps 3-4. Otherwise, close the session deterministically."
+  }, {
+    "text": "Example: \"I’m closing the session now. Let me know if you need anything else later.\""
   } ],
+  "referencedPlaybooks": [ "projects/miguelai/locations/us-central1/agents/d27f2462-5527-4091-9362-8b8455f9a753/playbooks/dbcdb990-3f44-499c-8b3d-a540966432d4" ],
   "referencedTools": [ "projects/miguelai/locations/us-central1/agents/d27f2462-5527-4091-9362-8b8455f9a753/tools/453f9950-c415-48de-8d3b-bb00f3c1e94a", "projects/miguelai/locations/us-central1/agents/d27f2462-5527-4091-9362-8b8455f9a753/tools/91952ff5-73cd-464e-8db3-a44b86e6d51e", "projects/miguelai/locations/us-central1/agents/d27f2462-5527-4091-9362-8b8455f9a753/tools/df-code-interpreter-tool" ],
   "instruction": {
     "steps": [ {
-      "text": "1. Paraphrase the user’s request to confirm intent.",
-      "steps": [ {
-        "text": "Example: \"It sounds like you need help with a SQL query or BigQuery performance issue.\""
-      } ]
+      "text": "1. Confirm the BigQuery-related intent by paraphrasing."
     }, {
-      "text": "2. Identify the query as SQL or BigQuery-related using keywords like \"SQL error\", \"query performance\", \"slow query\", \"optimization\".",
-      "steps": [ {
-        "text": "Example: \"Your query involves BigQuery. I’ll use ${TOOL:453f9950-c415-48de-8d3b-bb00f3c1e94a} to process your request.\""
-      } ]
+      "text": "Example: “It sounds like you’re asking about a BigQuery SQL error.”"
     }, {
-      "text": "3. Process the request using ${TOOL:453f9950-c415-48de-8d3b-bb00f3c1e94a}.",
-      "steps": [ {
-        "text": "Example: \"I found inefficiencies in the SQL query using ${TOOL:453f9950-c415-48de-8d3b-bb00f3c1e94a}.\""
-      } ]
+      "text": "2. Use BigQuery-specific keywords: “SQL error”, “dataset”, “query performance”."
     }, {
-      "text": "4. Provide the result and ask if further assistance is required.",
-      "steps": [ {
-        "text": "Example: \"Here’s the solution for your SQL issue. Would you like any further assistance?\""
-      } ]
+      "text": "Example: \"Your query involves BigQuery. I’ll use ${TOOL:453f9950-c415-48de-8d3b-bb00f3c1e94a} to process your"
     }, {
-      "text": "5. If further assistance is required, handle the additional task and repeat steps 3-4. Otherwise, close the session deterministically.",
-      "steps": [ {
-        "text": "Example: \"I’m closing the session now. Let me know if you need anything else later.\""
-      } ]
+      "text": "3. If the query involves Looker or Looker Studio, pass it to the respective agent."
+    }, {
+      "text": "Example: “Passing this to ${AGENT:dbcdb990-3f44-499c-8b3d-a540966432d4} as it’s related to Looker.”"
+    }, {
+      "text": "4. Process the request using ${TOOL:453f9950-c415-48de-8d3b-bb00f3c1e94a}."
+    }, {
+      "text": "Example: \"I found inefficiencies in the SQL query using ${TOOL:453f9950-c415-48de-8d3b-bb00f3c1e94a}.\""
+    }, {
+      "text": "5. Provide the result and ask if further assistance is required."
+    }, {
+      "text": "Example: \"Here’s the solution for your SQL issue. Would you like any further assistance?\""
+    }, {
+      "text": "6. If further assistance is required, handle the additional task and repeat steps 3-4. Otherwise, close the session deterministically."
+    }, {
+      "text": "Example: \"I’m closing the session now. Let me know if you need anything else later.\""
     } ]
   }
 }

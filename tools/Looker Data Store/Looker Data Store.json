@@ -10,7 +10,7 @@
     } ],
     "models": {
       "summarizationModel": {
-      
+        "model": "gemini_15_flash_001"
       }
     },
     "fallbackPrompt": {

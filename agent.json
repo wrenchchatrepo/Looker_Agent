@@ -7,6 +7,7 @@
   
   },
   "enableStackdriverLogging": true,
+  "enableSpellCorrection": true,
   "advancedSettings": {
     "audioExportGcsDestination": {
     
@@ -40,7 +41,7 @@
   "answerFeedbackSettings": {
     "enableAnswerFeedback": true
   },
-  "startPlaybook": "Default Generative Agent",
+  "startPlaybook": "Looker_Studio_Assisstant",
   "webClientSettings": {
     "boxBorderRadius": "0"
   }

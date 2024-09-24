@@ -41,11 +41,11 @@
     }
   },
   "llmModelSettings": {
-    "model": "gemini-pro",
+    "model": "gemini-1.5-flash",
     "parameters": {
-      "temperature": 0,
-      "inputTokenLimit": "INPUT_TOKEN_LIMIT_UNSPECIFIED",
-      "outputTokenLimit": "OUTPUT_TOKEN_LIMIT_UNSPECIFIED"
+      "temperature": 0.75,
+      "inputTokenLimit": "INPUT_TOKEN_LIMIT_SHORT",
+      "outputTokenLimit": "OUTPUT_TOKEN_LIMIT_SHORT"
     }
   }
 }

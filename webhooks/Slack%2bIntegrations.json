@@ -1,0 +1,12 @@
+{
+  "name": "54bf7cc9-0290-4443-a508-7dbc100fcbc0",
+  "displayName": "Slack+Integrations",
+  "genericWebService": {
+    "uri": "https://dialogflow.cloud.google.com/v1/cx/locations/us-central1/integrations/slack/webhook/projects/miguelai/agents/d27f2462-5527-4091-9362-8b8455f9a753/integrations/9b7c8882-a552-4ab4-9f0d-d98872a82f41",
+    "username": "6578284753109.7775220212321",
+    "password": "8e26b6992b741f54cad4a377cf78cbdc"
+  },
+  "timeout": {
+    "seconds": 5
+  }
+}
